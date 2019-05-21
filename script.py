@@ -163,6 +163,12 @@ def run(filename):
             stack.pop()
         elif c == 'display':
             display(screen)
+        elif c == 'frames':
+            pass
+        elif c == 'basename':
+            pass
+        elif c == 'vary':
+            pass
         elif c == 'save':
             save_extension(screen, args[0])
         # end operation loop
