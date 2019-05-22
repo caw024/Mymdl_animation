@@ -23,6 +23,16 @@ def first_pass( commands ):
     name = ''
     num_frames = 1
 
+    if 'frames' in commands and 'basename' in commands:
+        num_frames = commands['args'][0]
+        name = commands['args'][0]
+    elif 'frames' in commands and 'basename' not in commands:
+        num_frames = commands['args'][0]
+        name = 'urmom'
+        print("using the name urmom because basename not provided")
+    elif 'vary' in commands and 'frames' not in commands:
+        exit()
+
     return (name, num_frames)
 
 """======== second_pass( commands ) ==========
@@ -164,7 +174,7 @@ def run(filename):
         elif c == 'display':
             display(screen)
         elif c == 'frames':
-            pass
+            num_frames = args[0]
         elif c == 'basename':
             pass
         elif c == 'vary':
